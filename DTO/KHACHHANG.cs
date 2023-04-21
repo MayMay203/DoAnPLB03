@@ -26,6 +26,7 @@ namespace DoAnPBL3.DTO
         public bool gioiTinh { get; set; }
         public string diaChi { get; set; }
         public int diemTichLuy { get; set; }
+        public bool coXoa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BANPHUCVU> BANPHUCVUs { get; set; }

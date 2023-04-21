@@ -32,6 +32,12 @@
             this.pnlBanan = new System.Windows.Forms.Panel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.dtgvBanan = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maPV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ghiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTimkiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnTimkiem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -47,12 +53,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maPV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ghiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.pnlBanan.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBanan)).BeginInit();
@@ -103,6 +104,59 @@
             this.dtgvBanan.Size = new System.Drawing.Size(706, 366);
             this.dtgvBanan.TabIndex = 0;
             this.dtgvBanan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvBanan_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "STT";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 60;
+            // 
+            // maBan
+            // 
+            this.maBan.DataPropertyName = "maBan";
+            this.maBan.HeaderText = "Mã bàn";
+            this.maBan.MinimumWidth = 8;
+            this.maBan.Name = "maBan";
+            this.maBan.ReadOnly = true;
+            this.maBan.Width = 120;
+            // 
+            // maPV
+            // 
+            this.maPV.DataPropertyName = "maPV";
+            this.maPV.HeaderText = "Mã phục vụ";
+            this.maPV.MinimumWidth = 8;
+            this.maPV.Name = "maPV";
+            this.maPV.ReadOnly = true;
+            this.maPV.Width = 130;
+            // 
+            // soGhe
+            // 
+            this.soGhe.DataPropertyName = "soGhe";
+            this.soGhe.HeaderText = "Số ghế";
+            this.soGhe.MinimumWidth = 8;
+            this.soGhe.Name = "soGhe";
+            this.soGhe.ReadOnly = true;
+            this.soGhe.Width = 70;
+            // 
+            // trangThai
+            // 
+            this.trangThai.DataPropertyName = "trangThai";
+            this.trangThai.HeaderText = "Trạng thái";
+            this.trangThai.MinimumWidth = 8;
+            this.trangThai.Name = "trangThai";
+            this.trangThai.ReadOnly = true;
+            this.trangThai.Width = 130;
+            // 
+            // ghiChu
+            // 
+            this.ghiChu.DataPropertyName = "ghiChu";
+            this.ghiChu.HeaderText = "Ghi chú";
+            this.ghiChu.MinimumWidth = 8;
+            this.ghiChu.Name = "ghiChu";
+            this.ghiChu.ReadOnly = true;
+            this.ghiChu.Width = 150;
             // 
             // txtTimkiem
             // 
@@ -155,15 +209,16 @@
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.Controls.Add(this.btnXoa);
             this.guna2GradientPanel1.Controls.Add(this.btnXemlichsudatban);
             this.guna2GradientPanel1.Controls.Add(this.btnCapnhat);
             this.guna2GradientPanel1.Controls.Add(this.btnThem);
             this.guna2GradientPanel1.FillColor = System.Drawing.SystemColors.ControlLight;
             this.guna2GradientPanel1.FillColor2 = System.Drawing.SystemColors.ControlLight;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(180, 595);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(125, 608);
             this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(879, 94);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1001, 94);
             this.guna2GradientPanel1.TabIndex = 55;
             // 
             // btnXemlichsudatban
@@ -180,7 +235,7 @@
             this.btnXemlichsudatban.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnXemlichsudatban.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnXemlichsudatban.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnXemlichsudatban.Location = new System.Drawing.Point(555, 20);
+            this.btnXemlichsudatban.Location = new System.Drawing.Point(687, 20);
             this.btnXemlichsudatban.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXemlichsudatban.Name = "btnXemlichsudatban";
             this.btnXemlichsudatban.Size = new System.Drawing.Size(277, 56);
@@ -203,7 +258,7 @@
             this.btnCapnhat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCapnhat.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnCapnhat.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnCapnhat.Location = new System.Drawing.Point(304, 20);
+            this.btnCapnhat.Location = new System.Drawing.Point(255, 20);
             this.btnCapnhat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCapnhat.Name = "btnCapnhat";
             this.btnCapnhat.Size = new System.Drawing.Size(190, 56);
@@ -226,7 +281,7 @@
             this.btnThem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThem.ImageOffset = new System.Drawing.Point(5, 0);
             this.btnThem.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThem.Location = new System.Drawing.Point(42, 20);
+            this.btnThem.Location = new System.Drawing.Point(26, 20);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(190, 56);
@@ -377,58 +432,28 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "Mã bàn";
             // 
-            // Column1
+            // btnXoa
             // 
-            this.Column1.HeaderText = "STT";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 60;
-            // 
-            // maBan
-            // 
-            this.maBan.DataPropertyName = "maBan";
-            this.maBan.HeaderText = "Mã bàn";
-            this.maBan.MinimumWidth = 8;
-            this.maBan.Name = "maBan";
-            this.maBan.ReadOnly = true;
-            this.maBan.Width = 120;
-            // 
-            // maPV
-            // 
-            this.maPV.DataPropertyName = "maPV";
-            this.maPV.HeaderText = "Mã phục vụ";
-            this.maPV.MinimumWidth = 8;
-            this.maPV.Name = "maPV";
-            this.maPV.ReadOnly = true;
-            this.maPV.Width = 130;
-            // 
-            // soGhe
-            // 
-            this.soGhe.DataPropertyName = "soGhe";
-            this.soGhe.HeaderText = "Số ghế";
-            this.soGhe.MinimumWidth = 8;
-            this.soGhe.Name = "soGhe";
-            this.soGhe.ReadOnly = true;
-            this.soGhe.Width = 70;
-            // 
-            // trangThai
-            // 
-            this.trangThai.DataPropertyName = "trangThai";
-            this.trangThai.HeaderText = "Trạng thái";
-            this.trangThai.MinimumWidth = 8;
-            this.trangThai.Name = "trangThai";
-            this.trangThai.ReadOnly = true;
-            this.trangThai.Width = 130;
-            // 
-            // ghiChu
-            // 
-            this.ghiChu.DataPropertyName = "ghiChu";
-            this.ghiChu.HeaderText = "Ghi chú";
-            this.ghiChu.MinimumWidth = 8;
-            this.ghiChu.Name = "ghiChu";
-            this.ghiChu.ReadOnly = true;
-            this.ghiChu.Width = 150;
+            this.btnXoa.BorderRadius = 15;
+            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoa.FillColor = System.Drawing.Color.DarkSalmon;
+            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.Black;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnXoa.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnXoa.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnXoa.Location = new System.Drawing.Point(487, 20);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(164, 56);
+            this.btnXoa.TabIndex = 52;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // BanAnAdmin
             // 
@@ -479,5 +504,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn soGhe;
         private System.Windows.Forms.DataGridViewTextBoxColumn trangThai;
         private System.Windows.Forms.DataGridViewTextBoxColumn ghiChu;
+        private Guna.UI2.WinForms.Guna2Button btnXoa;
     }
 }

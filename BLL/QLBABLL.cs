@@ -7,6 +7,7 @@ using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DoAnPBL3.BLL
 {
@@ -14,6 +15,12 @@ namespace DoAnPBL3.BLL
     {
         public static QLBABLL Instance = new QLBABLL();
     
+        public List<string> GetTTBA()
+        {
+            QLNH_DB db = new QLNH_DB();
+            var list = db.BANANs.Select(p => p.trangThai).Distinct().ToList();
+            return list;
+        }    
         
         // Search
         public List<BANAN> GetAllBABy(string trangThai,string soGhe)
@@ -23,23 +30,23 @@ namespace DoAnPBL3.BLL
             if(trangThai == "Tất cả" && soGhe != "")
             {
                 SG = Convert.ToInt32(soGhe);
-                var list = db.BANANs.Where(p => p.soGhe == SG);
+                var list = db.BANANs.Where(p => p.soGhe == SG && p.coXoa == false);
                 return list.ToList();
             }
             else if(trangThai == "Tất cả" && soGhe == "")
             {
-               var list = db.BANANs.Select(p => p);
+               var list = db.BANANs.Where(p => p.coXoa == false).Select(p => p);
                 return list.ToList();
             }    
             else if(soGhe == "")
             {
-                var list = db.BANANs.Where(p => p.trangThai == trangThai);
+                var list = db.BANANs.Where(p => p.trangThai == trangThai && p.coXoa == false);
                 return list.ToList();
             } 
             else
             {
                 SG = Convert.ToInt32(soGhe);
-                var list = db.BANANs.Where(p => p.trangThai == trangThai && p.soGhe == SG);
+                var list = db.BANANs.Where(p => p.trangThai == trangThai && p.soGhe == SG && p.coXoa == false);
                 return list.ToList();
             }
         }
@@ -69,7 +76,15 @@ namespace DoAnPBL3.BLL
             db.SaveChanges();
         }
 
+        public void Delete(string maBan)
+        {
+            QLNH_DB db = new QLNH_DB();
+            BANAN ba = db.BANANs.Find(maBan);
+            ba.coXoa = true;
+            db.SaveChanges();
+        }
 
-        
+
+        // số trang slide
     }
 }

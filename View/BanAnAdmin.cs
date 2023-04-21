@@ -17,8 +17,14 @@ namespace DoAnPBL3
         public BanAnAdmin()
         {
             InitializeComponent();
-            dtgvBanan.DataSource = QLBABLL.Instance.GetAllBABy("Tất cả", "");
+            ShowAllBABy("Tất cả", "");
             SetCBB();
+        }
+
+        public void ShowAllBABy(string trangThai, string soGhe)
+        {
+            dtgvBanan.DataSource = QLBABLL.Instance.GetAllBABy(trangThai, soGhe);
+            SetSTT();
         }
         public void ShowForminPanel(Form form)
         {
@@ -32,9 +38,10 @@ namespace DoAnPBL3
 
         public void SetCBB()
         {
-            cbbTrangThai.Items.Add("Tất cả");
-            cbbTrangThai.Items.Add("Đã đặt");
-            cbbTrangThai.Items.Add("Trống");
+            foreach(string trangThai in QLBABLL.Instance.GetTTBA())
+            {
+                cbbTrangThai.Items.Add(trangThai);
+            }    
         }
 
         public void SetSTT()
@@ -62,7 +69,8 @@ namespace DoAnPBL3
 
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
-           dtgvBanan.DataSource = QLBABLL.Instance.GetAllBABy(txtTimkiem.Text,"");
+            string trangThai = txtTimkiem.Text;
+            ShowAllBABy(trangThai, "");
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -70,10 +78,12 @@ namespace DoAnPBL3
             cbbTrangThai.SelectedIndex = 2;
             BANAN ba = new BANAN()
             {
-               soGhe = Convert.ToInt32(txtSoghe.Text), trangThai = cbbTrangThai.SelectedItem.ToString(), ghiChu = txtGhichu.Text
+                soGhe = Convert.ToInt32(txtSoghe.Text),
+                trangThai = cbbTrangThai.SelectedItem.ToString(),
+                ghiChu = txtGhichu.Text
             };
             QLBABLL.Instance.Add(ba);
-            dtgvBanan.DataSource = QLBABLL.Instance.GetAllBABy("Tất cả","");
+            ShowAllBABy("Tất cả", "");
         }
 
         private void dtgvBanan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -95,7 +105,7 @@ namespace DoAnPBL3
                     ghiChu = txtGhichu.Text
                 };
                 QLBABLL.Instance.Update(ba);
-                dtgvBanan.DataSource = QLBABLL.Instance.GetAllBABy("Tất cả","");
+                ShowAllBABy("Tất cả", "");
             }
             else
             {
@@ -105,6 +115,31 @@ namespace DoAnPBL3
         private void cbbTrangThai_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtTimkiem.Text = cbbTrangThai.SelectedItem.ToString();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("Bạn có muốn xóa bàn ăn", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (DialogResult == DialogResult.OK)
+            {
+                if (dtgvBanan.SelectedRows.Count > 0)
+                {
+                    List<string> list = new List<string>();
+                    foreach (DataGridViewRow dr in dtgvBanan.SelectedRows)
+                    {
+                        list.Add(dr.Cells["maBan"].Value.ToString());
+                    }
+                    foreach (string maBan in list)
+                    {
+                        QLBABLL.Instance.Delete(maBan);
+                    }
+                    ShowAllBABy("Tất cả", "");
+                }
+                else
+                {
+                    MessageBox.Show("Chọn 1 bàn để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

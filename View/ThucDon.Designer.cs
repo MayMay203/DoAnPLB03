@@ -254,7 +254,7 @@
             // cbbTimKiem
             // 
             this.cbbTimKiem.FormattingEnabled = true;
-            this.cbbTimKiem.Location = new System.Drawing.Point(41, 26);
+            this.cbbTimKiem.Location = new System.Drawing.Point(40, 34);
             this.cbbTimKiem.MaximumSize = new System.Drawing.Size(320, 0);
             this.cbbTimKiem.Name = "cbbTimKiem";
             this.cbbTimKiem.Size = new System.Drawing.Size(320, 28);
@@ -267,7 +267,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(679, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(608, 89);
+            this.panel1.Size = new System.Drawing.Size(608, 101);
             this.panel1.TabIndex = 64;
             // 
             // btnTK
@@ -283,7 +283,7 @@
             this.btnTK.ForeColor = System.Drawing.Color.White;
             this.btnTK.Image = ((System.Drawing.Image)(resources.GetObject("btnTK.Image")));
             this.btnTK.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnTK.Location = new System.Drawing.Point(388, 12);
+            this.btnTK.Location = new System.Drawing.Point(387, 26);
             this.btnTK.MaximumSize = new System.Drawing.Size(170, 52);
             this.btnTK.Name = "btnTK";
             this.btnTK.Size = new System.Drawing.Size(170, 52);

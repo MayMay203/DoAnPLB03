@@ -8,6 +8,7 @@
     <Property Name="soGhe" Type="int" Nullable="false" />
     <Property Name="trangThai" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="ghiChu" Type="nvarchar(max)" />
+    <Property Name="coXoa" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="BANPHUCVU">
     <Key>
@@ -18,6 +19,7 @@
     <Property Name="maTK" Type="char" MaxLength="5" Nullable="false" />
     <Property Name="soNguoi" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="thoiGianVao" Type="smalldatetime" Nullable="false" />
+    <Property Name="coXoa" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="CHITIETBANPHUCVU">
     <Key>
@@ -68,13 +70,15 @@
     <Property Name="gioiTinh" Type="bit" Nullable="false" />
     <Property Name="diaChi" Type="nvarchar(max)" />
     <Property Name="diemTichLuy" Type="int" Nullable="false" />
+    <Property Name="coXoa" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="LOAIMON">
     <Key>
       <PropertyRef Name="maLM" />
     </Key>
     <Property Name="maLM" Type="char" MaxLength="5" Nullable="false" />
-    <Property Name="tenLM" Type="nvarchar" MaxLength="50" />
+    <Property Name="tenLM" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="coXoa" Type="bit" />
   </EntityType>
   <EntityType Name="MONAN">
     <Key>
@@ -83,8 +87,9 @@
     <Property Name="maMA" Type="char" MaxLength="5" Nullable="false" />
     <Property Name="tenMA" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="maLM" Type="char" MaxLength="5" Nullable="false" />
-    <Property Name="GiaMA" Type="money" Nullable="false" />
+    <Property Name="GiaMA" Type="float" Nullable="false" />
     <Property Name="donViTinh" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="coXoa" Type="bit" />
   </EntityType>
   <EntityType Name="NHANVIEN">
     <Key>
@@ -99,6 +104,7 @@
     <Property Name="SDT" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="diaChi" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="luong" Type="money" Nullable="false" />
+    <Property Name="coXoa" Type="bit" />
   </EntityType>
   <EntityType Name="PHANCONGCALAM">
     <Key>
@@ -116,6 +122,7 @@
     <Property Name="tenDangNhap" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="matKhau" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="vaiTro" Type="bit" Nullable="false" />
+    <Property Name="coXoa" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="FK_BANPHUCVU_KHACHHANG">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />

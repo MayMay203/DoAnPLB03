@@ -4,6 +4,7 @@
     <EntitySetMapping Name="BANANs">
       <EntityTypeMapping TypeName="HTHTKDNHModel.BANAN">
         <MappingFragment StoreEntitySet="BANAN">
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
           <ScalarProperty Name="maBan" ColumnName="maBan" />
           <ScalarProperty Name="soGhe" ColumnName="soGhe" />
           <ScalarProperty Name="trangThai" ColumnName="trangThai" />
@@ -14,6 +15,7 @@
     <EntitySetMapping Name="BANPHUCVUs">
       <EntityTypeMapping TypeName="HTHTKDNHModel.BANPHUCVU">
         <MappingFragment StoreEntitySet="BANPHUCVU">
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
           <ScalarProperty Name="maPV" ColumnName="maPV" />
           <ScalarProperty Name="maKH" ColumnName="maKH" />
           <ScalarProperty Name="maTK" ColumnName="maTK" />
@@ -58,6 +60,7 @@
     <EntitySetMapping Name="KHACHHANGs">
       <EntityTypeMapping TypeName="HTHTKDNHModel.KHACHHANG">
         <MappingFragment StoreEntitySet="KHACHHANG">
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
           <ScalarProperty Name="diemTichLuy" ColumnName="diemTichLuy" />
           <ScalarProperty Name="maKH" ColumnName="maKH" />
           <ScalarProperty Name="tenKH" ColumnName="tenKH" />
@@ -70,6 +73,7 @@
     <EntitySetMapping Name="LOAIMONs">
       <EntityTypeMapping TypeName="HTHTKDNHModel.LOAIMON">
         <MappingFragment StoreEntitySet="LOAIMON">
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
           <ScalarProperty Name="maLM" ColumnName="maLM" />
           <ScalarProperty Name="tenLM" ColumnName="tenLM" />
         </MappingFragment>
@@ -78,6 +82,7 @@
     <EntitySetMapping Name="MONANs">
       <EntityTypeMapping TypeName="HTHTKDNHModel.MONAN">
         <MappingFragment StoreEntitySet="MONAN">
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
           <ScalarProperty Name="maMA" ColumnName="maMA" />
           <ScalarProperty Name="tenMA" ColumnName="tenMA" />
           <ScalarProperty Name="maLM" ColumnName="maLM" />
@@ -89,6 +94,7 @@
     <EntitySetMapping Name="NHANVIENs">
       <EntityTypeMapping TypeName="HTHTKDNHModel.NHANVIEN">
         <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
           <ScalarProperty Name="maNV" ColumnName="maNV" />
           <ScalarProperty Name="maTK" ColumnName="maTK" />
           <ScalarProperty Name="tenNV" ColumnName="tenNV" />
@@ -104,6 +110,7 @@
     <EntitySetMapping Name="TAIKHOANs">
       <EntityTypeMapping TypeName="HTHTKDNHModel.TAIKHOAN">
         <MappingFragment StoreEntitySet="TAIKHOAN">
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
           <ScalarProperty Name="maTK" ColumnName="maTK" />
           <ScalarProperty Name="tenDangNhap" ColumnName="tenDangNhap" />
           <ScalarProperty Name="matKhau" ColumnName="matKhau" />

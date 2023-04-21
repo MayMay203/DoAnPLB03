@@ -22,6 +22,7 @@ namespace DoAnPBL3.DTO
     
         public string maLM { get; set; }
         public string tenLM { get; set; }
+        public Nullable<bool> coXoa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MONAN> MONANs { get; set; }

@@ -27,6 +27,7 @@ namespace DoAnPBL3.DTO
         public string maTK { get; set; }
         public string soNguoi { get; set; }
         public System.DateTime thoiGianVao { get; set; }
+        public bool coXoa { get; set; }
     
         public virtual KHACHHANG KHACHHANG { get; set; }
         public virtual TAIKHOAN TAIKHOAN { get; set; }

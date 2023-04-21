@@ -9,6 +9,7 @@
     <Property Name="trangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="ghiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="BANPHUCVUs" Relationship="Self.CHITIETDATBAN" FromRole="BANAN" ToRole="BANPHUCVU" />
+    <Property Name="coXoa" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="BANPHUCVU">
     <Key>
@@ -24,6 +25,7 @@
     <NavigationProperty Name="CHITIETBANPHUCVUs" Relationship="Self.FK_CHITIETBANPHUCVU_BANPHUCVU" FromRole="BANPHUCVU" ToRole="CHITIETBANPHUCVU" />
     <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_BANPHUCVU" FromRole="BANPHUCVU" ToRole="HOADON" />
     <NavigationProperty Name="BANANs" Relationship="Self.CHITIETDATBAN" FromRole="BANPHUCVU" ToRole="BANAN" />
+    <Property Name="coXoa" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="CHITIETBANPHUCVU">
     <Key>
@@ -72,14 +74,16 @@
     <Property Name="diaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="BANPHUCVUs" Relationship="Self.FK_BANPHUCVU_KHACHHANG" FromRole="KHACHHANG" ToRole="BANPHUCVU" />
     <Property Name="diemTichLuy" Type="Int32" Nullable="false" />
+    <Property Name="coXoa" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="LOAIMON">
     <Key>
       <PropertyRef Name="maLM" />
     </Key>
     <Property Name="maLM" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="tenLM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tenLM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="MONANs" Relationship="Self.FK_MONAN_LOAIMON" FromRole="LOAIMON" ToRole="MONAN" />
+    <Property Name="coXoa" Type="Boolean" />
   </EntityType>
   <EntityType Name="MONAN">
     <Key>
@@ -88,10 +92,11 @@
     <Property Name="maMA" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="tenMA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="maLM" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="GiaMA" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="GiaMA" Type="Double" Nullable="false" />
     <Property Name="donViTinh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <NavigationProperty Name="CHITIETBANPHUCVUs" Relationship="Self.FK_CHITIETBANPHUCVU_MONAN" FromRole="MONAN" ToRole="CHITIETBANPHUCVU" />
     <NavigationProperty Name="LOAIMON" Relationship="Self.FK_MONAN_LOAIMON" FromRole="MONAN" ToRole="LOAIMON" />
+    <Property Name="coXoa" Type="Boolean" />
   </EntityType>
   <EntityType Name="NHANVIEN">
     <Key>
@@ -107,6 +112,7 @@
     <Property Name="diaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="luong" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <NavigationProperty Name="TAIKHOAN" Relationship="Self.FK_NHANVIEN_TAIKHOAN" FromRole="NHANVIEN" ToRole="TAIKHOAN" />
+    <Property Name="coXoa" Type="Boolean" />
   </EntityType>
   <EntityType Name="TAIKHOAN">
     <Key>
@@ -120,6 +126,7 @@
     <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_TAIKHOAN" FromRole="TAIKHOAN" ToRole="HOADON" />
     <NavigationProperty Name="NHANVIENs" Relationship="Self.FK_NHANVIEN_TAIKHOAN" FromRole="TAIKHOAN" ToRole="NHANVIEN" />
     <NavigationProperty Name="CHITIETCALAMs" Relationship="Self.PHANCONGCALAM" FromRole="TAIKHOAN" ToRole="CHITIETCALAM" />
+    <Property Name="coXoa" Type="Boolean" Nullable="false" />
   </EntityType>
   <Association Name="FK_BANPHUCVU_KHACHHANG">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />

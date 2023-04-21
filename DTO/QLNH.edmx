@@ -13,6 +13,7 @@
           <Property Name="soGhe" Type="int" Nullable="false" />
           <Property Name="trangThai" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ghiChu" Type="nvarchar(max)" />
+          <Property Name="coXoa" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="BANPHUCVU">
           <Key>
@@ -23,6 +24,7 @@
           <Property Name="maTK" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="soNguoi" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="thoiGianVao" Type="smalldatetime" Nullable="false" />
+          <Property Name="coXoa" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="CHITIETBANPHUCVU">
           <Key>
@@ -73,13 +75,15 @@
           <Property Name="gioiTinh" Type="bit" Nullable="false" />
           <Property Name="diaChi" Type="nvarchar(max)" />
           <Property Name="diemTichLuy" Type="int" Nullable="false" />
+          <Property Name="coXoa" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="LOAIMON">
           <Key>
             <PropertyRef Name="maLM" />
           </Key>
           <Property Name="maLM" Type="char" MaxLength="5" Nullable="false" />
-          <Property Name="tenLM" Type="nvarchar" MaxLength="50" />
+          <Property Name="tenLM" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="coXoa" Type="bit" />
         </EntityType>
         <EntityType Name="MONAN">
           <Key>
@@ -88,8 +92,9 @@
           <Property Name="maMA" Type="char" MaxLength="5" Nullable="false" />
           <Property Name="tenMA" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="maLM" Type="char" MaxLength="5" Nullable="false" />
-          <Property Name="GiaMA" Type="money" Nullable="false" />
+          <Property Name="GiaMA" Type="float" Nullable="false" />
           <Property Name="donViTinh" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="coXoa" Type="bit" />
         </EntityType>
         <EntityType Name="NHANVIEN">
           <Key>
@@ -104,6 +109,7 @@
           <Property Name="SDT" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="diaChi" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="luong" Type="money" Nullable="false" />
+          <Property Name="coXoa" Type="bit" />
         </EntityType>
         <EntityType Name="PHANCONGCALAM">
           <Key>
@@ -121,6 +127,7 @@
           <Property Name="tenDangNhap" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="matKhau" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="vaiTro" Type="bit" Nullable="false" />
+          <Property Name="coXoa" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="FK_BANPHUCVU_KHACHHANG">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
@@ -341,6 +348,7 @@
           <Property Name="trangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ghiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="BANPHUCVUs" Relationship="Self.CHITIETDATBAN" FromRole="BANAN" ToRole="BANPHUCVU" />
+          <Property Name="coXoa" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="BANPHUCVU">
           <Key>
@@ -356,6 +364,7 @@
           <NavigationProperty Name="CHITIETBANPHUCVUs" Relationship="Self.FK_CHITIETBANPHUCVU_BANPHUCVU" FromRole="BANPHUCVU" ToRole="CHITIETBANPHUCVU" />
           <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_BANPHUCVU" FromRole="BANPHUCVU" ToRole="HOADON" />
           <NavigationProperty Name="BANANs" Relationship="Self.CHITIETDATBAN" FromRole="BANPHUCVU" ToRole="BANAN" />
+          <Property Name="coXoa" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="CHITIETBANPHUCVU">
           <Key>
@@ -404,14 +413,16 @@
           <Property Name="diaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="BANPHUCVUs" Relationship="Self.FK_BANPHUCVU_KHACHHANG" FromRole="KHACHHANG" ToRole="BANPHUCVU" />
           <Property Name="diemTichLuy" Type="Int32" Nullable="false" />
+          <Property Name="coXoa" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="LOAIMON">
           <Key>
             <PropertyRef Name="maLM" />
           </Key>
           <Property Name="maLM" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="tenLM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tenLM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="MONANs" Relationship="Self.FK_MONAN_LOAIMON" FromRole="LOAIMON" ToRole="MONAN" />
+          <Property Name="coXoa" Type="Boolean" />
         </EntityType>
         <EntityType Name="MONAN">
           <Key>
@@ -420,10 +431,11 @@
           <Property Name="maMA" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="tenMA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="maLM" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="GiaMA" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="GiaMA" Type="Double" Nullable="false" />
           <Property Name="donViTinh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="CHITIETBANPHUCVUs" Relationship="Self.FK_CHITIETBANPHUCVU_MONAN" FromRole="MONAN" ToRole="CHITIETBANPHUCVU" />
           <NavigationProperty Name="LOAIMON" Relationship="Self.FK_MONAN_LOAIMON" FromRole="MONAN" ToRole="LOAIMON" />
+          <Property Name="coXoa" Type="Boolean" />
         </EntityType>
         <EntityType Name="NHANVIEN">
           <Key>
@@ -439,6 +451,7 @@
           <Property Name="diaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="luong" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <NavigationProperty Name="TAIKHOAN" Relationship="Self.FK_NHANVIEN_TAIKHOAN" FromRole="NHANVIEN" ToRole="TAIKHOAN" />
+          <Property Name="coXoa" Type="Boolean" />
         </EntityType>
         <EntityType Name="TAIKHOAN">
           <Key>
@@ -452,6 +465,7 @@
           <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_TAIKHOAN" FromRole="TAIKHOAN" ToRole="HOADON" />
           <NavigationProperty Name="NHANVIENs" Relationship="Self.FK_NHANVIEN_TAIKHOAN" FromRole="TAIKHOAN" ToRole="NHANVIEN" />
           <NavigationProperty Name="CHITIETCALAMs" Relationship="Self.PHANCONGCALAM" FromRole="TAIKHOAN" ToRole="CHITIETCALAM" />
+          <Property Name="coXoa" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_BANPHUCVU_KHACHHANG">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
@@ -618,6 +632,7 @@
           <EntitySetMapping Name="BANANs">
             <EntityTypeMapping TypeName="HTHTKDNHModel.BANAN">
               <MappingFragment StoreEntitySet="BANAN">
+                <ScalarProperty Name="coXoa" ColumnName="coXoa" />
                 <ScalarProperty Name="maBan" ColumnName="maBan" />
                 <ScalarProperty Name="soGhe" ColumnName="soGhe" />
                 <ScalarProperty Name="trangThai" ColumnName="trangThai" />
@@ -628,6 +643,7 @@
           <EntitySetMapping Name="BANPHUCVUs">
             <EntityTypeMapping TypeName="HTHTKDNHModel.BANPHUCVU">
               <MappingFragment StoreEntitySet="BANPHUCVU">
+                <ScalarProperty Name="coXoa" ColumnName="coXoa" />
                 <ScalarProperty Name="maPV" ColumnName="maPV" />
                 <ScalarProperty Name="maKH" ColumnName="maKH" />
                 <ScalarProperty Name="maTK" ColumnName="maTK" />
@@ -672,6 +688,7 @@
           <EntitySetMapping Name="KHACHHANGs">
             <EntityTypeMapping TypeName="HTHTKDNHModel.KHACHHANG">
               <MappingFragment StoreEntitySet="KHACHHANG">
+                <ScalarProperty Name="coXoa" ColumnName="coXoa" />
                 <ScalarProperty Name="diemTichLuy" ColumnName="diemTichLuy" />
                 <ScalarProperty Name="maKH" ColumnName="maKH" />
                 <ScalarProperty Name="tenKH" ColumnName="tenKH" />
@@ -684,6 +701,7 @@
           <EntitySetMapping Name="LOAIMONs">
             <EntityTypeMapping TypeName="HTHTKDNHModel.LOAIMON">
               <MappingFragment StoreEntitySet="LOAIMON">
+                <ScalarProperty Name="coXoa" ColumnName="coXoa" />
                 <ScalarProperty Name="maLM" ColumnName="maLM" />
                 <ScalarProperty Name="tenLM" ColumnName="tenLM" />
               </MappingFragment>
@@ -692,6 +710,7 @@
           <EntitySetMapping Name="MONANs">
             <EntityTypeMapping TypeName="HTHTKDNHModel.MONAN">
               <MappingFragment StoreEntitySet="MONAN">
+                <ScalarProperty Name="coXoa" ColumnName="coXoa" />
                 <ScalarProperty Name="maMA" ColumnName="maMA" />
                 <ScalarProperty Name="tenMA" ColumnName="tenMA" />
                 <ScalarProperty Name="maLM" ColumnName="maLM" />
@@ -703,6 +722,7 @@
           <EntitySetMapping Name="NHANVIENs">
             <EntityTypeMapping TypeName="HTHTKDNHModel.NHANVIEN">
               <MappingFragment StoreEntitySet="NHANVIEN">
+                <ScalarProperty Name="coXoa" ColumnName="coXoa" />
                 <ScalarProperty Name="maNV" ColumnName="maNV" />
                 <ScalarProperty Name="maTK" ColumnName="maTK" />
                 <ScalarProperty Name="tenNV" ColumnName="tenNV" />
@@ -718,6 +738,7 @@
           <EntitySetMapping Name="TAIKHOANs">
             <EntityTypeMapping TypeName="HTHTKDNHModel.TAIKHOAN">
               <MappingFragment StoreEntitySet="TAIKHOAN">
+                <ScalarProperty Name="coXoa" ColumnName="coXoa" />
                 <ScalarProperty Name="maTK" ColumnName="maTK" />
                 <ScalarProperty Name="tenDangNhap" ColumnName="tenDangNhap" />
                 <ScalarProperty Name="matKhau" ColumnName="matKhau" />
