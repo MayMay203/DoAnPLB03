@@ -132,61 +132,57 @@ namespace DoAnPBL3.BLL
             }
 
         }
-        public List<TAIKHOAN> GetAll_TaiKhoan(string tentaikhoan, string cbb)
+        public List<TAIKHOAN> GetAll_TaiKhoan(string tentaikhoan)
         {
 
             QLNH_DB db = new QLNH_DB();
-            if (string.IsNullOrEmpty(tentaikhoan) && string.IsNullOrEmpty(cbb) || cbb == "All")
+            if (string.IsNullOrEmpty(tentaikhoan))
             {
-                var list = db.TAIKHOANs.Select(p => p).ToList();
+                var list = db.TAIKHOANs.Where(p => p.coXoa == false).Select(p => p).ToList();
                 return list;
             }
             else
             {
-                bool vaitro = true;
-                if (cbb == "0")
-                {
-                    vaitro = false;
-                }
-                var list = db.TAIKHOANs.Where(p => p.tenDangNhap.Contains(tentaikhoan) && p.vaiTro == vaitro).ToList();
+                var list = db.TAIKHOANs.Where(p => p.tenDangNhap.Contains(tentaikhoan) && p.coXoa == false).ToList();
                 return list;
             }
         }
-        public void AddTaikhoan(TAIKHOAN tk)
+        public void Add(TAIKHOAN tk)
         {
             QLNH_DB db = new QLNH_DB();
-            TAIKHOAN t = new TAIKHOAN
+            string lastID = db.TAIKHOANs.OrderByDescending(p => p.maTK).Select(p => p.maTK).FirstOrDefault();
+            string nextID = "";
+            if (lastID != "")
             {
-                maTK = tk.maTK,
-                tenDangNhap = tk.tenDangNhap,
-                matKhau = tk.matKhau,
-                vaiTro = tk.vaiTro,
-            };
+                int num = int.Parse(lastID.Replace("TK", ""));
+                num++;
+                nextID = "TK" + num.ToString("D3");
+            }
+            tk.maTK = nextID;
+            db.TAIKHOANs.Add(tk);
             db.SaveChanges();
         }
-        public void UpdateTaikhoan(TAIKHOAN tk)
+        public void Update(TAIKHOAN tk)
         {
             QLNH_DB db = new QLNH_DB();
             TAIKHOAN t = db.TAIKHOANs.Find(tk.maTK);
 
-            t.maTK = tk.maTK;
             t.tenDangNhap = tk.tenDangNhap;
             t.matKhau = tk.matKhau;
             t.vaiTro = tk.vaiTro;
             db.SaveChanges();
         }
-        public void DeleteTaikhoan(string matk)
+        public void Delete(string matk)
         {
-            //QLNH_DB db = new QLNH_DB();
-            //var tk = db.TAIKHOANs.Find(matk);
-            //db.TAIKHOANs.Remove(tk);
-            //db.SaveChanges();
-            //MessageBox.Show("Xóa thành công!","Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             QLNH_DB db = new QLNH_DB();
             var tk = db.TAIKHOANs.Where(p => p.maTK == matk).FirstOrDefault();
             if (tk != null)
             {
-                db.TAIKHOANs.Remove(tk);
+                //db.TAIKHOANs.Remove(tk);
+                tk.coXoa = true;
+                var nv = db.NHANVIENs.Where(p => p.maTK == tk.maTK).FirstOrDefault();
+                nv.coXoa = true;
                 db.SaveChanges();
                 MessageBox.Show("Xóa thành công!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -194,6 +190,8 @@ namespace DoAnPBL3.BLL
             {
                 MessageBox.Show("Không tìm thấy tài khoản cần xóa!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+
         }
        
 

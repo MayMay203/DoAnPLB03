@@ -41,6 +41,9 @@ namespace DoAnPBL3
         //Quản lý
         private void btnQuanly_MouseEnter(object sender, EventArgs e)
         {
+            pnlUI.Height = btnQuanly.Height;
+            pnlUI.Top = btnQuanly.Top;
+            pnlUI.Show();
             ((Guna2Button)sender).ContextMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y);
         }
         private void contextMenuStrip2_MouseLeave(object sender, EventArgs e)
@@ -68,6 +71,9 @@ namespace DoAnPBL3
         //Thống kê
         private void btnThongke_MouseEnter(object sender, EventArgs e)
         {
+            pnlUI.Height = btnThongke.Height;
+            pnlUI.Top = btnThongke.Top;
+            pnlUI.Show();
             ((Guna2Button)sender).ContextMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y);
         }
 

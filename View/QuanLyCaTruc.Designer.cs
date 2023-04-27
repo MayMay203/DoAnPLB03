@@ -1,4 +1,6 @@
-﻿namespace DoAnPBL3
+﻿using System.Windows.Forms;
+
+namespace DoAnPBL3
 {
     partial class QuanLyCaTruc
     {
@@ -29,9 +31,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyCaTruc));
-            this.txtTimkiem = new Guna.UI2.WinForms.Guna2TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnTimkiem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbbTrangthai = new System.Windows.Forms.ComboBox();
+            this.dtmNgaylam = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtmGiobatdau = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtmGioketthuc = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSoluong = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,48 +48,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.dtgvCatruc = new System.Windows.Forms.DataGridView();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCapnhat = new Guna.UI2.WinForms.Guna2Button();
-            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
-            this.dtmGioketthuc = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtmGiobatdau = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtmNgaylam = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.MaCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gioKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trangThai = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cbbTrangthai = new System.Windows.Forms.ComboBox();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCapnhat = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
+            this.dtmTimkiem = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Panel2.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCatruc)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtTimkiem
-            // 
-            this.txtTimkiem.BackColor = System.Drawing.Color.Transparent;
-            this.txtTimkiem.BorderRadius = 15;
-            this.txtTimkiem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTimkiem.DefaultText = "";
-            this.txtTimkiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTimkiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTimkiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTimkiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTimkiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimkiem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTimkiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimkiem.Location = new System.Drawing.Point(69, 13);
-            this.txtTimkiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTimkiem.Name = "txtTimkiem";
-            this.txtTimkiem.PasswordChar = '\0';
-            this.txtTimkiem.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtTimkiem.PlaceholderText = "";
-            this.txtTimkiem.SelectedText = "";
-            this.txtTimkiem.Size = new System.Drawing.Size(368, 38);
-            this.txtTimkiem.TabIndex = 48;
             // 
             // btnTimkiem
             // 
@@ -128,6 +108,59 @@
             this.guna2Panel2.Size = new System.Drawing.Size(449, 366);
             this.guna2Panel2.TabIndex = 49;
             // 
+            // cbbTrangthai
+            // 
+            this.cbbTrangthai.FormattingEnabled = true;
+            this.cbbTrangthai.Location = new System.Drawing.Point(142, 315);
+            this.cbbTrangthai.Name = "cbbTrangthai";
+            this.cbbTrangthai.Size = new System.Drawing.Size(226, 24);
+            this.cbbTrangthai.TabIndex = 58;
+            // 
+            // dtmNgaylam
+            // 
+            this.dtmNgaylam.Checked = true;
+            this.dtmNgaylam.CustomFormat = "dd/MM/yyyy";
+            this.dtmNgaylam.FillColor = System.Drawing.Color.Silver;
+            this.dtmNgaylam.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtmNgaylam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmNgaylam.Location = new System.Drawing.Point(142, 71);
+            this.dtmNgaylam.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtmNgaylam.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtmNgaylam.Name = "dtmNgaylam";
+            this.dtmNgaylam.Size = new System.Drawing.Size(226, 36);
+            this.dtmNgaylam.TabIndex = 57;
+            this.dtmNgaylam.Value = new System.DateTime(2023, 4, 21, 8, 6, 18, 25);
+            // 
+            // dtmGiobatdau
+            // 
+            this.dtmGiobatdau.Checked = true;
+            this.dtmGiobatdau.FillColor = System.Drawing.Color.Silver;
+            this.dtmGiobatdau.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtmGiobatdau.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtmGiobatdau.Location = new System.Drawing.Point(142, 130);
+            this.dtmGiobatdau.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtmGiobatdau.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtmGiobatdau.Name = "dtmGiobatdau";
+            this.dtmGiobatdau.ShowUpDown = true;
+            this.dtmGiobatdau.Size = new System.Drawing.Size(226, 36);
+            this.dtmGiobatdau.TabIndex = 56;
+            this.dtmGiobatdau.Value = new System.DateTime(2023, 4, 21, 8, 6, 18, 25);
+            // 
+            // dtmGioketthuc
+            // 
+            this.dtmGioketthuc.Checked = true;
+            this.dtmGioketthuc.FillColor = System.Drawing.Color.Silver;
+            this.dtmGioketthuc.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtmGioketthuc.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtmGioketthuc.Location = new System.Drawing.Point(142, 191);
+            this.dtmGioketthuc.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtmGioketthuc.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtmGioketthuc.Name = "dtmGioketthuc";
+            this.dtmGioketthuc.ShowUpDown = true;
+            this.dtmGioketthuc.Size = new System.Drawing.Size(226, 36);
+            this.dtmGioketthuc.TabIndex = 55;
+            this.dtmGioketthuc.Value = new System.DateTime(2023, 4, 21, 8, 7, 48, 665);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -149,6 +182,7 @@
             this.txtSoluong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtSoluong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoluong.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSoluong.ForeColor = System.Drawing.Color.Black;
             this.txtSoluong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoluong.Location = new System.Drawing.Point(142, 246);
             this.txtSoluong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -192,6 +226,7 @@
             this.txtMacatruc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMacatruc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMacatruc.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMacatruc.ForeColor = System.Drawing.Color.Black;
             this.txtMacatruc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMacatruc.Location = new System.Drawing.Point(142, 15);
             this.txtMacatruc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -263,124 +298,6 @@
             this.dtgvCatruc.TabIndex = 0;
             this.dtgvCatruc.SelectionChanged += new System.EventHandler(this.dtgvCatruc_SelectionChanged);
             // 
-            // guna2GradientPanel1
-            // 
-            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel1.Controls.Add(this.btnXoa);
-            this.guna2GradientPanel1.Controls.Add(this.btnCapnhat);
-            this.guna2GradientPanel1.Controls.Add(this.btnThem);
-            this.guna2GradientPanel1.FillColor = System.Drawing.SystemColors.ControlLight;
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.SystemColors.ControlLight;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(197, 448);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(670, 75);
-            this.guna2GradientPanel1.TabIndex = 52;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BorderRadius = 15;
-            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoa.FillColor = System.Drawing.Color.DarkSalmon;
-            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnXoa.ImageOffset = new System.Drawing.Point(5, 0);
-            this.btnXoa.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnXoa.Location = new System.Drawing.Point(472, 15);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(169, 45);
-            this.btnXoa.TabIndex = 2;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // btnCapnhat
-            // 
-            this.btnCapnhat.BorderRadius = 15;
-            this.btnCapnhat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCapnhat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCapnhat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCapnhat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCapnhat.FillColor = System.Drawing.Color.DarkSalmon;
-            this.btnCapnhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapnhat.ForeColor = System.Drawing.Color.Black;
-            this.btnCapnhat.Image = ((System.Drawing.Image)(resources.GetObject("btnCapnhat.Image")));
-            this.btnCapnhat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCapnhat.ImageOffset = new System.Drawing.Point(5, 0);
-            this.btnCapnhat.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnCapnhat.Location = new System.Drawing.Point(248, 15);
-            this.btnCapnhat.Name = "btnCapnhat";
-            this.btnCapnhat.Size = new System.Drawing.Size(169, 45);
-            this.btnCapnhat.TabIndex = 1;
-            this.btnCapnhat.Text = "Cập nhật";
-            this.btnCapnhat.TextOffset = new System.Drawing.Point(20, 0);
-            // 
-            // btnThem
-            // 
-            this.btnThem.BorderRadius = 15;
-            this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThem.FillColor = System.Drawing.Color.DarkSalmon;
-            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.Color.Black;
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThem.ImageOffset = new System.Drawing.Point(5, 0);
-            this.btnThem.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThem.Location = new System.Drawing.Point(25, 15);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(169, 45);
-            this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // dtmGioketthuc
-            // 
-            this.dtmGioketthuc.Checked = true;
-            this.dtmGioketthuc.FillColor = System.Drawing.Color.Silver;
-            this.dtmGioketthuc.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtmGioketthuc.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtmGioketthuc.Location = new System.Drawing.Point(142, 191);
-            this.dtmGioketthuc.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtmGioketthuc.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtmGioketthuc.Name = "dtmGioketthuc";
-            this.dtmGioketthuc.Size = new System.Drawing.Size(226, 36);
-            this.dtmGioketthuc.TabIndex = 55;
-            this.dtmGioketthuc.Value = new System.DateTime(2023, 4, 21, 8, 7, 48, 665);
-            // 
-            // dtmGiobatdau
-            // 
-            this.dtmGiobatdau.Checked = true;
-            this.dtmGiobatdau.FillColor = System.Drawing.Color.Silver;
-            this.dtmGiobatdau.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtmGiobatdau.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtmGiobatdau.Location = new System.Drawing.Point(142, 130);
-            this.dtmGiobatdau.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtmGiobatdau.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtmGiobatdau.Name = "dtmGiobatdau";
-            this.dtmGiobatdau.Size = new System.Drawing.Size(226, 36);
-            this.dtmGiobatdau.TabIndex = 56;
-            this.dtmGiobatdau.Value = new System.DateTime(2023, 4, 21, 8, 6, 18, 25);
-            // 
-            // dtmNgaylam
-            // 
-            this.dtmNgaylam.Checked = true;
-            this.dtmNgaylam.FillColor = System.Drawing.Color.Silver;
-            this.dtmNgaylam.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtmNgaylam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmNgaylam.Location = new System.Drawing.Point(142, 71);
-            this.dtmNgaylam.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtmNgaylam.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtmNgaylam.Name = "dtmNgaylam";
-            this.dtmNgaylam.Size = new System.Drawing.Size(226, 36);
-            this.dtmNgaylam.TabIndex = 57;
-            this.dtmNgaylam.Value = new System.DateTime(2023, 4, 21, 8, 6, 18, 25);
-            // 
             // MaCT
             // 
             this.MaCT.DataPropertyName = "maCT";
@@ -392,6 +309,8 @@
             // ngayLam
             // 
             this.ngayLam.DataPropertyName = "ngayLam";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.ngayLam.DefaultCellStyle = dataGridViewCellStyle1;
             this.ngayLam.HeaderText = "Ngày làm";
             this.ngayLam.MinimumWidth = 6;
             this.ngayLam.Name = "ngayLam";
@@ -431,23 +350,110 @@
             this.trangThai.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.trangThai.Width = 125;
             // 
-            // cbbTrangthai
+            // guna2GradientPanel1
             // 
-            this.cbbTrangthai.FormattingEnabled = true;
-            this.cbbTrangthai.Location = new System.Drawing.Point(142, 315);
-            this.cbbTrangthai.Name = "cbbTrangthai";
-            this.cbbTrangthai.Size = new System.Drawing.Size(226, 24);
-            this.cbbTrangthai.TabIndex = 58;
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.Controls.Add(this.btnXoa);
+            this.guna2GradientPanel1.Controls.Add(this.btnCapnhat);
+            this.guna2GradientPanel1.Controls.Add(this.btnThem);
+            this.guna2GradientPanel1.FillColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.SystemColors.ControlLight;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(197, 448);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(670, 75);
+            this.guna2GradientPanel1.TabIndex = 52;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BorderRadius = 15;
+            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoa.FillColor = System.Drawing.Color.DarkSalmon;
+            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.Black;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnXoa.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnXoa.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnXoa.Location = new System.Drawing.Point(472, 15);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(169, 45);
+            this.btnXoa.TabIndex = 2;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnCapnhat
+            // 
+            this.btnCapnhat.BorderRadius = 15;
+            this.btnCapnhat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCapnhat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCapnhat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCapnhat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCapnhat.FillColor = System.Drawing.Color.DarkSalmon;
+            this.btnCapnhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapnhat.ForeColor = System.Drawing.Color.Black;
+            this.btnCapnhat.Image = ((System.Drawing.Image)(resources.GetObject("btnCapnhat.Image")));
+            this.btnCapnhat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCapnhat.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnCapnhat.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnCapnhat.Location = new System.Drawing.Point(248, 15);
+            this.btnCapnhat.Name = "btnCapnhat";
+            this.btnCapnhat.Size = new System.Drawing.Size(169, 45);
+            this.btnCapnhat.TabIndex = 1;
+            this.btnCapnhat.Text = "Cập nhật";
+            this.btnCapnhat.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnCapnhat.Click += new System.EventHandler(this.btnCapnhat_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BorderRadius = 15;
+            this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThem.FillColor = System.Drawing.Color.DarkSalmon;
+            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.Color.Black;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThem.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnThem.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnThem.Location = new System.Drawing.Point(25, 15);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(169, 45);
+            this.btnThem.TabIndex = 0;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // dtmTimkiem
+            // 
+            this.dtmTimkiem.Checked = true;
+            this.dtmTimkiem.CustomFormat = "dd/MM/yyyy";
+            this.dtmTimkiem.FillColor = System.Drawing.Color.Silver;
+            this.dtmTimkiem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtmTimkiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtmTimkiem.Location = new System.Drawing.Point(133, 12);
+            this.dtmTimkiem.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtmTimkiem.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtmTimkiem.Name = "dtmTimkiem";
+            this.dtmTimkiem.ShowUpDown = true;
+            this.dtmTimkiem.Size = new System.Drawing.Size(279, 36);
+            this.dtmTimkiem.TabIndex = 53;
+            this.dtmTimkiem.Value = new System.DateTime(2023, 4, 25, 23, 39, 57, 542);
             // 
             // QuanLyCaTruc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 603);
+            this.Controls.Add(this.dtmTimkiem);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.guna2GradientPanel2);
             this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.txtTimkiem);
             this.Controls.Add(this.btnTimkiem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "QuanLyCaTruc";
@@ -464,7 +470,6 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2TextBox txtTimkiem;
         private Guna.UI2.WinForms.Guna2Button btnTimkiem;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2TextBox txtMacatruc;
@@ -484,12 +489,13 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker dtmNgaylam;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtmGiobatdau;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtmGioketthuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaCT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngayLam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gioBatDau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gioKetThuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soLuong;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn trangThai;
         private System.Windows.Forms.ComboBox cbbTrangthai;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtmTimkiem;
+        private DataGridViewTextBoxColumn MaCT;
+        private DataGridViewTextBoxColumn ngayLam;
+        private DataGridViewTextBoxColumn gioBatDau;
+        private DataGridViewTextBoxColumn gioKetThuc;
+        private DataGridViewTextBoxColumn soLuong;
+        private DataGridViewCheckBoxColumn trangThai;
     }
 }

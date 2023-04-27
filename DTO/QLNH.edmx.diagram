@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b0398a0fe8c24b71b33c2cb06ef2378b" Name="Diagram1">
-        <EntityTypeShape EntityType="HTHTKDNHModel.BANAN" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HTHTKDNHModel.BANPHUCVU" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="HTHTKDNHModel.CHITIETBANPHUCVU" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HTHTKDNHModel.CHITIETCALAM" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="HTHTKDNHModel.HOADON" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="HTHTKDNHModel.KHACHHANG" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="HTHTKDNHModel.LOAIMON" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="HTHTKDNHModel.MONAN" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="HTHTKDNHModel.NHANVIEN" Width="1.5" PointX="7.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="HTHTKDNHModel.TAIKHOAN" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+      <Diagram DiagramId="e417b0d30b82450dba03b14f53884074" Name="Diagram1">
+        <EntityTypeShape EntityType="HTHTKDNHModel.BANAN" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HTHTKDNHModel.BANPHUCVU" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HTHTKDNHModel.CHITIETBANPHUCVU" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HTHTKDNHModel.CHITIETCALAM" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HTHTKDNHModel.HOADON" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HTHTKDNHModel.KHACHHANG" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="HTHTKDNHModel.LOAIMON" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="HTHTKDNHModel.MONAN" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HTHTKDNHModel.NHANVIEN" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HTHTKDNHModel.TAIKHOAN" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
         <AssociationConnector Association="HTHTKDNHModel.FK_BANPHUCVU_KHACHHANG" ManuallyRouted="false" />
         <AssociationConnector Association="HTHTKDNHModel.FK_BANPHUCVU_TAIKHOAN" ManuallyRouted="false" />
         <AssociationConnector Association="HTHTKDNHModel.FK_CHITIETBANPHUCVU_BANPHUCVU" ManuallyRouted="false" />
@@ -22,6 +22,7 @@
         <AssociationConnector Association="HTHTKDNHModel.FK_CHITIETBANPHUCVU_MONAN" ManuallyRouted="false" />
         <AssociationConnector Association="HTHTKDNHModel.FK_HOADON_TAIKHOAN" ManuallyRouted="false" />
         <AssociationConnector Association="HTHTKDNHModel.FK_MONAN_LOAIMON" ManuallyRouted="false" />
+        <AssociationConnector Association="HTHTKDNHModel.FK_NHANVIEN_TAIKHOAN" ManuallyRouted="false" />
         <AssociationConnector Association="HTHTKDNHModel.CHITIETDATBAN" ManuallyRouted="false" />
         <AssociationConnector Association="HTHTKDNHModel.PHANCONGCALAM" ManuallyRouted="false" />
       </Diagram>

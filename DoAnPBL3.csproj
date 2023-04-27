@@ -62,7 +62,6 @@
     <Compile Include="BLL\QLCTBLL.cs" />
     <Compile Include="BLL\QLHDBLL.cs" />
     <Compile Include="BLL\QLKHBLL.cs" />
-    <Compile Include="BLL\QLCLVBLL.cs" />
     <Compile Include="BLL\QLNVBLL.cs" />
     <Compile Include="BLL\QLTDBLL.cs" />
     <Compile Include="BLL\QLTKBLL.cs" />
@@ -107,9 +106,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLNH.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DTO\sysdiagram.cs">
-      <DependentUpon>QLNH.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\TAIKHOAN.cs">
       <DependentUpon>QLNH.tt</DependentUpon>
@@ -426,6 +422,7 @@
       <DependentUpon>QLNH.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DoAnPBL3.DTO.NHANVIEN.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -442,7 +439,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="DTO\QLNH.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

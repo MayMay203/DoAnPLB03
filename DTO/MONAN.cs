@@ -23,7 +23,7 @@ namespace DoAnPBL3.DTO
         public string maMA { get; set; }
         public string tenMA { get; set; }
         public string maLM { get; set; }
-        public decimal giaMA { get; set; }
+        public double giaMA { get; set; }
         public string donViTinh { get; set; }
         public byte[] anhMA { get; set; }
         public bool coXoa { get; set; }

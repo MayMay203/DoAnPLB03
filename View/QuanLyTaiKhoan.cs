@@ -25,7 +25,7 @@ namespace DoAnPBL3
         {
             cbbVaitro.Items.AddRange(new object[]
             {
-                "All","1","0"
+                "1","0"
             });
         }
 
@@ -37,8 +37,7 @@ namespace DoAnPBL3
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
             string txt = txtTimkiem.Text;
-            string cbb = cbbVaitro.SelectedItem != null ? cbbVaitro.SelectedItem.ToString() : "";
-            dtgvQLTK.DataSource = QLTKBLL.Instance.GetAll_TaiKhoan(txt, cbb);
+            dtgvQLTK.DataSource = QLTKBLL.Instance.GetAll_TaiKhoan(txt);
         }
 
         private void dtgvQLTK_SelectionChanged(object sender, EventArgs e)
@@ -48,55 +47,72 @@ namespace DoAnPBL3
                 txtMaTK.Text = dtgvQLTK.SelectedRows[0].Cells["maTK"].Value.ToString();
                 txtTendangnhap.Text = dtgvQLTK.SelectedRows[0].Cells["tenDangNhap"].Value.ToString();
                 txtMathau.Text = dtgvQLTK.SelectedRows[0].Cells["matKhau"].Value.ToString();
-                cbbVaitro.Text = Convert.ToInt32(dtgvQLTK.SelectedRows[0].Cells["vaiTro"].FormattedValue).ToString();
+                cbbVaitro.Text = Convert.ToInt32(dtgvQLTK.SelectedRows[0].Cells["vaiTro"].Value).ToString();
             }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txtTendangnhap.Text) || string.IsNullOrEmpty(txtMaTK.Text) || string.IsNullOrEmpty(txtMathau.Text) || cbbVaitro.SelectedItem == null)
+            try
             {
-                MessageBox.Show("Thêm không thành công! Vui lòng nhập đầy đủ thông tin!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                TAIKHOAN tk = new TAIKHOAN
+                if (string.IsNullOrEmpty(txtTendangnhap.Text) || string.IsNullOrEmpty(txtMathau.Text) || cbbVaitro.SelectedItem == null)
                 {
-                    maTK = txtMaTK.Text,
-                    tenDangNhap = txtTendangnhap.Text,
-                    matKhau = txtMathau.Text,
-                    vaiTro = Convert.ToBoolean(cbbVaitro.SelectedItem.ToString())
-                };
-                QLTKBLL.Instance.AddTaikhoan(tk);
-                MessageBox.Show("Thêm thành công!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void btnCapnhat_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtTendangnhap.Text) || string.IsNullOrEmpty(txtMaTK.Text) || string.IsNullOrEmpty(txtMathau.Text) || cbbVaitro.SelectedItem == null)
-            {
-                MessageBox.Show("Cập nhật không thành công! Vui lòng nhập đầy đủ thông tin!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                if(dtgvQLTK.SelectedRows.Count > 0)
+                    MessageBox.Show("Thêm không thành công! Vui lòng nhập đầy đủ thông tin!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
                 {
                     TAIKHOAN tk = new TAIKHOAN
                     {
                         maTK = txtMaTK.Text,
                         tenDangNhap = txtTendangnhap.Text,
                         matKhau = txtMathau.Text,
-                        vaiTro = Convert.ToBoolean(cbbVaitro.SelectedItem.ToString())
+                        vaiTro = Convert.ToBoolean(cbbVaitro.SelectedItem.ToString() == "1" ? true : false),
+                        coXoa = false
                     };
-                    QLTKBLL.Instance.UpdateTaikhoan(tk);
-                    MessageBox.Show("Cập nhật thành công!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    QLTKBLL.Instance.Add(tk);
+                    MessageBox.Show("Thêm thành công!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Thêm không thành công!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
+        }
+
+        private void btnCapnhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtTendangnhap.Text) || string.IsNullOrEmpty(txtMathau.Text) || cbbVaitro.SelectedItem == null)
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn một dòng để cập nhật!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dtgvQLTK.SelectedRows.Count > 0)
+                    {
+                        TAIKHOAN tk = new TAIKHOAN
+                        {
+                            maTK = txtMaTK.Text,
+                            tenDangNhap = txtTendangnhap.Text,
+                            matKhau = txtMathau.Text,
+                            vaiTro = Convert.ToBoolean(cbbVaitro.SelectedItem.ToString() == "1" ? true : false)
+                        };
+                        QLTKBLL.Instance.Update(tk);
+                        MessageBox.Show("Cập nhật thành công!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng chọn một dòng để cập nhật!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Cập nhật không thành công!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
             
         }
 
@@ -107,7 +123,7 @@ namespace DoAnPBL3
                 if(dtgvQLTK.SelectedRows.Count > 0)
                 {
                     string matk = dtgvQLTK.SelectedRows[0].Cells["maTK"].Value.ToString();
-                    QLTKBLL.Instance.DeleteTaikhoan(matk);
+                    QLTKBLL.Instance.Delete(matk);
                 }
                 else
                 {

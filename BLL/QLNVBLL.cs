@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DoAnPBL3.BLL
 {
@@ -29,38 +30,64 @@ namespace DoAnPBL3.BLL
             QLNH_DB db = new QLNH_DB();
             if (txt == null)
             {
-                var list = db.NHANVIENs.Select(p => p).ToList();
+                var list = db.NHANVIENs.Where(p => p.coXoa == false).Select(p => p).ToList();
                 return list;
             }
             else
             {
-                var list = db.NHANVIENs.Where(p => p.tenNV.Contains(txt)).ToList();
+                var list = db.NHANVIENs.Where(p => p.tenNV.Contains(txt) && p.coXoa == false).ToList();
                 return list;
             }
 
         }
-
-        public void AddNV(NHANVIEN nv)
+        public void Add(NHANVIEN nv)
         {
             QLNH_DB db = new QLNH_DB();
+            string lastID = db.NHANVIENs
+                              .Where(p => p.maNV.StartsWith("NV"))
+                              .OrderByDescending(p => p.maNV)
+                              .Select(p => p.maNV)
+                              .FirstOrDefault();
+            string nextID = "";
+            if (lastID != "")
+            {
+                int num = int.Parse(lastID.Replace("NV", ""));
+                num++;
+                nextID = "NV" + num.ToString("D3");
+            }
+            nv.maNV = nextID;
             db.NHANVIENs.Add(nv);
             db.SaveChanges();
+            //QLNH_DB db = new QLNH_DB();
+            //string lastID = db.NHANVIENs.OrderByDescending(p => p.maNV).Select(p => p.maNV).FirstOrDefault();
+            //string nextID = "";
+            //if (lastID != "")
+            //{
+            //    int num = int.Parse(lastID.Replace("NV", ""));
+            //    num++;
+            //    nextID = "NV" + num.ToString("D3");
+            //}
+            //nv.maNV = nextID;
+            //db.NHANVIENs.Add(nv);
+            //db.SaveChanges();   
         }
-        public void UpdateNV(NHANVIEN nv)
+        public void Update(NHANVIEN nv)
         {
             QLNH_DB db = new QLNH_DB();
             NHANVIEN t = db.NHANVIENs.Find(nv.maNV);
-
-            t.maNV = nv.maNV;
-            t.maTK = nv.maTK;
-            t.tenNV = nv.tenNV;
-            t.ngaySinh = nv.ngaySinh;
-            t.SDT = nv.SDT;
-            t.gioiTinh = nv.gioiTinh;
-            t.diaChi = nv.diaChi;
-            t.CCCD = nv.CCCD;
-            t.luong = nv.luong;
-            db.SaveChanges();
+            if(t != null)
+            {
+                t.maTK = nv.maTK;
+                t.tenNV = nv.tenNV;
+                t.ngaySinh = nv.ngaySinh;
+                t.SDT = nv.SDT;
+                t.gioiTinh = nv.gioiTinh;
+                t.diaChi = nv.diaChi;
+                t.CCCD = nv.CCCD;
+                t.luong = nv.luong;
+                t.coXoa = nv.coXoa;
+                db.SaveChanges();
+            }
         }
 
     }

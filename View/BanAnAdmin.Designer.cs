@@ -44,6 +44,7 @@
             this.btnCapnhat = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbbTrangthai = new System.Windows.Forms.ComboBox();
             this.txtGhichu = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSoghe = new Guna.UI2.WinForms.Guna2TextBox();
@@ -51,7 +52,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbbTrangthai = new System.Windows.Forms.ComboBox();
             this.pnlBanan.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBanan)).BeginInit();
@@ -278,6 +278,15 @@
             this.guna2Panel2.Size = new System.Drawing.Size(415, 300);
             this.guna2Panel2.TabIndex = 54;
             // 
+            // cbbTrangthai
+            // 
+            this.cbbTrangthai.FormattingEnabled = true;
+            this.cbbTrangthai.Location = new System.Drawing.Point(142, 145);
+            this.cbbTrangthai.Name = "cbbTrangthai";
+            this.cbbTrangthai.Size = new System.Drawing.Size(229, 24);
+            this.cbbTrangthai.TabIndex = 52;
+            this.cbbTrangthai.SelectedIndexChanged += new System.EventHandler(this.cbbTrangthai_SelectedIndexChanged);
+            // 
             // txtGhichu
             // 
             this.txtGhichu.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -384,14 +393,6 @@
             this.label1.Size = new System.Drawing.Size(57, 17);
             this.label1.TabIndex = 36;
             this.label1.Text = "Mã bàn";
-            // 
-            // cbbTrangthai
-            // 
-            this.cbbTrangthai.FormattingEnabled = true;
-            this.cbbTrangthai.Location = new System.Drawing.Point(142, 145);
-            this.cbbTrangthai.Name = "cbbTrangthai";
-            this.cbbTrangthai.Size = new System.Drawing.Size(229, 24);
-            this.cbbTrangthai.TabIndex = 52;
             // 
             // BanAnAdmin
             // 

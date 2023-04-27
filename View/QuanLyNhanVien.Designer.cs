@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyNhanVien));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnCapnhat = new Guna.UI2.WinForms.Guna2Button();
@@ -65,10 +66,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.nHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maTKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioiTinhDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ngaySinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCCDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diaChiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.luongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coXoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tAIKHOANDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNhanvien)).BeginInit();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -182,6 +196,7 @@
             // 
             // dtgvNhanvien
             // 
+            this.dtgvNhanvien.AutoGenerateColumns = false;
             this.dtgvNhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvNhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maNV,
@@ -192,7 +207,19 @@
             this.CCCD,
             this.SDT,
             this.diaChi,
-            this.luong});
+            this.luong,
+            this.maNVDataGridViewTextBoxColumn,
+            this.maTKDataGridViewTextBoxColumn,
+            this.tenNVDataGridViewTextBoxColumn,
+            this.gioiTinhDataGridViewCheckBoxColumn,
+            this.ngaySinhDataGridViewTextBoxColumn,
+            this.cCCDDataGridViewTextBoxColumn,
+            this.sDTDataGridViewTextBoxColumn,
+            this.diaChiDataGridViewTextBoxColumn,
+            this.luongDataGridViewTextBoxColumn,
+            this.coXoaDataGridViewTextBoxColumn,
+            this.tAIKHOANDataGridViewTextBoxColumn});
+            this.dtgvNhanvien.DataSource = this.nHANVIENBindingSource;
             this.dtgvNhanvien.Location = new System.Drawing.Point(4, 4);
             this.dtgvNhanvien.Name = "dtgvNhanvien";
             this.dtgvNhanvien.RowHeadersWidth = 51;
@@ -494,6 +521,7 @@
             this.txtMaNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtMaNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMaNV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaNV.Enabled = false;
             this.txtMaNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaNV.ForeColor = System.Drawing.Color.Black;
@@ -596,6 +624,98 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "Mã nhân viên";
             // 
+            // nHANVIENBindingSource
+            // 
+            this.nHANVIENBindingSource.DataSource = typeof(DoAnPBL3.DTO.NHANVIEN);
+            // 
+            // maNVDataGridViewTextBoxColumn
+            // 
+            this.maNVDataGridViewTextBoxColumn.DataPropertyName = "maNV";
+            this.maNVDataGridViewTextBoxColumn.HeaderText = "maNV";
+            this.maNVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
+            this.maNVDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // maTKDataGridViewTextBoxColumn
+            // 
+            this.maTKDataGridViewTextBoxColumn.DataPropertyName = "maTK";
+            this.maTKDataGridViewTextBoxColumn.HeaderText = "maTK";
+            this.maTKDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maTKDataGridViewTextBoxColumn.Name = "maTKDataGridViewTextBoxColumn";
+            this.maTKDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tenNVDataGridViewTextBoxColumn
+            // 
+            this.tenNVDataGridViewTextBoxColumn.DataPropertyName = "tenNV";
+            this.tenNVDataGridViewTextBoxColumn.HeaderText = "tenNV";
+            this.tenNVDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenNVDataGridViewTextBoxColumn.Name = "tenNVDataGridViewTextBoxColumn";
+            this.tenNVDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // gioiTinhDataGridViewCheckBoxColumn
+            // 
+            this.gioiTinhDataGridViewCheckBoxColumn.DataPropertyName = "gioiTinh";
+            this.gioiTinhDataGridViewCheckBoxColumn.HeaderText = "gioiTinh";
+            this.gioiTinhDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.gioiTinhDataGridViewCheckBoxColumn.Name = "gioiTinhDataGridViewCheckBoxColumn";
+            this.gioiTinhDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // ngaySinhDataGridViewTextBoxColumn
+            // 
+            this.ngaySinhDataGridViewTextBoxColumn.DataPropertyName = "ngaySinh";
+            this.ngaySinhDataGridViewTextBoxColumn.HeaderText = "ngaySinh";
+            this.ngaySinhDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngaySinhDataGridViewTextBoxColumn.Name = "ngaySinhDataGridViewTextBoxColumn";
+            this.ngaySinhDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cCCDDataGridViewTextBoxColumn
+            // 
+            this.cCCDDataGridViewTextBoxColumn.DataPropertyName = "CCCD";
+            this.cCCDDataGridViewTextBoxColumn.HeaderText = "CCCD";
+            this.cCCDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cCCDDataGridViewTextBoxColumn.Name = "cCCDDataGridViewTextBoxColumn";
+            this.cCCDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sDTDataGridViewTextBoxColumn
+            // 
+            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
+            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
+            this.sDTDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // diaChiDataGridViewTextBoxColumn
+            // 
+            this.diaChiDataGridViewTextBoxColumn.DataPropertyName = "diaChi";
+            this.diaChiDataGridViewTextBoxColumn.HeaderText = "diaChi";
+            this.diaChiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.diaChiDataGridViewTextBoxColumn.Name = "diaChiDataGridViewTextBoxColumn";
+            this.diaChiDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // luongDataGridViewTextBoxColumn
+            // 
+            this.luongDataGridViewTextBoxColumn.DataPropertyName = "luong";
+            this.luongDataGridViewTextBoxColumn.HeaderText = "luong";
+            this.luongDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.luongDataGridViewTextBoxColumn.Name = "luongDataGridViewTextBoxColumn";
+            this.luongDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // coXoaDataGridViewTextBoxColumn
+            // 
+            this.coXoaDataGridViewTextBoxColumn.DataPropertyName = "coXoa";
+            this.coXoaDataGridViewTextBoxColumn.HeaderText = "coXoa";
+            this.coXoaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.coXoaDataGridViewTextBoxColumn.Name = "coXoaDataGridViewTextBoxColumn";
+            this.coXoaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tAIKHOANDataGridViewTextBoxColumn
+            // 
+            this.tAIKHOANDataGridViewTextBoxColumn.DataPropertyName = "TAIKHOAN";
+            this.tAIKHOANDataGridViewTextBoxColumn.HeaderText = "TAIKHOAN";
+            this.tAIKHOANDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tAIKHOANDataGridViewTextBoxColumn.Name = "tAIKHOANDataGridViewTextBoxColumn";
+            this.tAIKHOANDataGridViewTextBoxColumn.Width = 125;
+            // 
             // QuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -616,6 +736,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNhanvien)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -657,5 +778,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn diaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn luong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maTKDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn gioiTinhDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngaySinhDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCCDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diaChiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn luongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coXoaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tAIKHOANDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource nHANVIENBindingSource;
     }
 }

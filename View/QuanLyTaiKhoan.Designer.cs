@@ -224,6 +224,7 @@
             this.txtMaTK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtMaTK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtMaTK.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaTK.Enabled = false;
             this.txtMaTK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaTK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaTK.ForeColor = System.Drawing.Color.Black;
@@ -290,6 +291,7 @@
             this.txtMathau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMathau.Location = new System.Drawing.Point(187, 307);
             this.txtMathau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMathau.MaxLength = 6;
             this.txtMathau.Name = "txtMathau";
             this.txtMathau.PasswordChar = '\0';
             this.txtMathau.PlaceholderText = "";

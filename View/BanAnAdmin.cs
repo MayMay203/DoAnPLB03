@@ -90,10 +90,7 @@ namespace DoAnPBL3
             }
         }
 
-        private void cbbTrangthai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtTimkiem.Text = cbbTrangthai.SelectedItem.ToString();
-        }
+     
 
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
@@ -106,6 +103,11 @@ namespace DoAnPBL3
             txtSoghe.Text = dtgvBanan.SelectedRows[0].Cells["soGhe"].Value.ToString();
             cbbTrangthai.SelectedIndex = cbbTrangthai.Items.IndexOf(dtgvBanan.SelectedRows[0].Cells["trangThai"].Value.ToString());
             txtGhichu.Text = dtgvBanan.SelectedRows[0].Cells["ghiChu"].Value.ToString();
+        }
+
+        private void cbbTrangthai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtTimkiem.Text = cbbTrangthai.SelectedItem.ToString();
         }
     }
 }

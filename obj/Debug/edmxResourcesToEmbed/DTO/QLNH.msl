@@ -8,6 +8,7 @@
           <ScalarProperty Name="soGhe" ColumnName="soGhe" />
           <ScalarProperty Name="trangThai" ColumnName="trangThai" />
           <ScalarProperty Name="ghiChu" ColumnName="ghiChu" />
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -19,6 +20,7 @@
           <ScalarProperty Name="maTK" ColumnName="maTK" />
           <ScalarProperty Name="soNguoi" ColumnName="soNguoi" />
           <ScalarProperty Name="thoiGianVao" ColumnName="thoiGianVao" />
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -64,6 +66,7 @@
           <ScalarProperty Name="gioiTinh" ColumnName="gioiTinh" />
           <ScalarProperty Name="diaChi" ColumnName="diaChi" />
           <ScalarProperty Name="diemTichLuy" ColumnName="diemTichLuy" />
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -72,6 +75,7 @@
         <MappingFragment StoreEntitySet="LOAIMON">
           <ScalarProperty Name="maLM" ColumnName="maLM" />
           <ScalarProperty Name="tenLM" ColumnName="tenLM" />
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -81,9 +85,10 @@
           <ScalarProperty Name="maMA" ColumnName="maMA" />
           <ScalarProperty Name="tenMA" ColumnName="tenMA" />
           <ScalarProperty Name="maLM" ColumnName="maLM" />
-          <ScalarProperty Name="GiaMA" ColumnName="GiaMA" />
+          <ScalarProperty Name="giaMA" ColumnName="giaMA" />
           <ScalarProperty Name="donViTinh" ColumnName="donViTinh" />
-          <ScalarProperty Name="AnhMA" ColumnName="AnhMA" />
+          <ScalarProperty Name="anhMA" ColumnName="anhMA" />
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -99,17 +104,7 @@
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="diaChi" ColumnName="diaChi" />
           <ScalarProperty Name="luong" ColumnName="luong" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="HTHTKDNHModel.sysdiagram">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -120,6 +115,7 @@
           <ScalarProperty Name="tenDangNhap" ColumnName="tenDangNhap" />
           <ScalarProperty Name="matKhau" ColumnName="matKhau" />
           <ScalarProperty Name="vaiTro" ColumnName="vaiTro" />
+          <ScalarProperty Name="coXoa" ColumnName="coXoa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
