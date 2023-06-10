@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace DoAnPBL3
 {
-    public partial class UINhanVien : Form
+    public partial class UINhaHangNhanVien : Form
     {
        
-        public UINhanVien()
+        public UINhaHangNhanVien()
         {
             InitializeComponent();
             ShowForminPanel(new UI());

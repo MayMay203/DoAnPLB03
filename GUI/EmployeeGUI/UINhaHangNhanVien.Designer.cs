@@ -1,6 +1,6 @@
 ﻿namespace DoAnPBL3
 {
-    partial class UINhanVien
+    partial class UINhaHangNhanVien
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UINhanVien));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UINhaHangNhanVien));
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlUI = new System.Windows.Forms.Panel();
             this.btnCaLV = new Guna.UI2.WinForms.Guna2Button();
