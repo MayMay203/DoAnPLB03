@@ -118,7 +118,6 @@ namespace DoAnPBL3.View
                     QLCaLamBLL.Instance.HuyCaLam(mact, maTK);
                     MessageBox.Show("Hủy ca làm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
         }
         else

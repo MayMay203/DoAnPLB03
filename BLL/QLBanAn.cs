@@ -8,23 +8,32 @@ using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace DoAnPBL3.BLL
 {
     public class QLBanAn
     {
         public static QLBanAn Instance = new QLBanAn();
-     
+
         public List<BANAN> GetAllBABy(string trangThai, string soGhe)
         {
             QLNH_DB db = new QLNH_DB();
             int SG;
             if (trangThai == "Tất cả" && soGhe != "")
             {
-                SG = Convert.ToInt32(soGhe);
-                var list = db.BANANs
-                           .Where(p => p.soGhe == SG && p.coXoa == false).ToList();
-                return list;
+                try
+                {
+                    SG = Convert.ToInt32(soGhe);
+                    var list = db.BANANs
+                               .Where(p => p.soGhe == SG && p.coXoa == false).ToList();
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Thông tin không hợp lệ.\nVui lòng kiểm tra lại!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return null;
+                }
             }
             else if (trangThai == "Tất cả" && soGhe == "")
             {
@@ -38,9 +47,17 @@ namespace DoAnPBL3.BLL
             }
             else
             {
-                SG = Convert.ToInt32(soGhe);
-                var list = db.BANANs.Where(p => p.trangThai == trangThai && p.soGhe == SG && p.coXoa == false).ToList();
-                return list;
+                try
+                {
+                    SG = Convert.ToInt32(soGhe);
+                    var list = db.BANANs.Where(p => p.trangThai == trangThai && p.soGhe == SG && p.coXoa == false).ToList();
+                    return list;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Thông tin không hợp lệ.\nVui lòng kiểm tra lại!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return null;
+                }
             }
         }
 

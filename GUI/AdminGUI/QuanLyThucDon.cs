@@ -151,7 +151,7 @@ namespace DoAnPBL3
                     }
                     else
                     {
-                        MessageBox.Show("Vui lòng chọn 1 dòng dể cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Vui lòng chọn một món ăn để cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

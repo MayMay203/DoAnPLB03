@@ -87,7 +87,6 @@ namespace DoAnPBL3
                 {
                     CHITIETCALAM ct = new CHITIETCALAM
                     {
-                        maCT = txtMaCT.Text,
                         ngayLam = dtmNgaylam.Value,
                         gioBatDau = dtmGiobatdau.Value.TimeOfDay,
                         gioKetThuc = dtmGioketthuc.Value.TimeOfDay,
@@ -126,7 +125,7 @@ namespace DoAnPBL3
                             soLuong = Convert.ToInt32(txtSoluong.Text),
                         };
                         QLCaLamBLL.Instance.Update(ct);
-                        MessageBox.Show("Cập nhật thành công!", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ShowAllCT("");
                     }
                 }

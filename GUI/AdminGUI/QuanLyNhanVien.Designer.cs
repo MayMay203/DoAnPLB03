@@ -397,7 +397,7 @@
             this.dtmNgaysinh.Name = "dtmNgaysinh";
             this.dtmNgaysinh.Size = new System.Drawing.Size(258, 45);
             this.dtmNgaysinh.TabIndex = 56;
-            this.dtmNgaysinh.Value = new System.DateTime(2023, 4, 17, 22, 34, 36, 114);
+            this.dtmNgaysinh.Value = new System.DateTime(2023, 6, 10, 0, 0, 0, 0);
             // 
             // rdoNu
             // 

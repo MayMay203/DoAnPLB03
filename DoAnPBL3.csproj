@@ -285,11 +285,11 @@
     <Compile Include="GUI\AdminGUI\UINhahangAdmin.Designer.cs">
       <DependentUpon>UINhahangAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\EmployeeGUI\UINhahangNhanVien.cs">
+    <Compile Include="GUI\EmployeeGUI\UINhaHangNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\EmployeeGUI\UINhahangNhanVien.Designer.cs">
-      <DependentUpon>UINhahangNhanVien.cs</DependentUpon>
+    <Compile Include="GUI\EmployeeGUI\UINhaHangNhanVien.Designer.cs">
+      <DependentUpon>UINhaHangNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\EmployeeGUI\LuongNhanVien.cs">
       <SubType>Form</SubType>
@@ -446,8 +446,8 @@
     <EmbeddedResource Include="GUI\AdminGUI\UINhahangAdmin.resx">
       <DependentUpon>UINhahangAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\EmployeeGUI\UINhahangNhanVien.resx">
-      <DependentUpon>UINhahangNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\EmployeeGUI\UINhaHangNhanVien.resx">
+      <DependentUpon>UINhaHangNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EmployeeGUI\TrangChuNhanVien.resx">
       <DependentUpon>TrangChuNhanVien.cs</DependentUpon>
